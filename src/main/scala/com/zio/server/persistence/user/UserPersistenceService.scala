@@ -48,7 +48,7 @@ object UserPersistenceService {
       sql"""SELECT * FROM USERS WHERE ID = $id"""".query[User]
 
     def create(user: User): Update0 =
-      sql"""INSERT INTO USERS (id, name) VALUES (${user.id}, ${user.name})"""".update
+      sql"""INSERT INTO USERS (id, name) VALUES (${user.id}, ${user.name})""".update
 
     def delete(id: Int): Update0 =
       sql"""DELETE FROM USERS WHERE ID = $id"""".update
